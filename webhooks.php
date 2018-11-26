@@ -22,9 +22,9 @@ $url = 'https://api.mlab.com/api/1/databases/fb_bot_db/collections/fb_bot?apiKey
 $json = file_get_contents('https://api.mlab.com/api/1/databases/fb_bot_db/collections/fb_bot?apiKey='.$api_key.'&q={"question":"'.$message.'"}');
 $data = json_decode($json);
 $isData=sizeof($data);
-if (strpos($message, 'สอนเป็ด') !== false) {
-  if (strpos($message, 'สอนเป็ด') !== false) {
-    $x_tra = str_replace("สอนเป็ด","", $message);
+if (strpos($message, 'สอนบอท') !== false) {
+  if (strpos($message, 'สอนบอท') !== false) {
+    $x_tra = str_replace("สอนบอท","", $message);
     $pieces = explode("|", $x_tra);
     $_question=str_replace("[","",$pieces[0]);
     $_answer=str_replace("]","",$pieces[1]);
@@ -44,7 +44,7 @@ if (strpos($message, 'สอนเป็ด') !== false) {
     );
     $context = stream_context_create($opts);
     $returnValue = file_get_contents($url,false,$context);
-    $message_to_reply = 'ขอบคุณที่สอนเป็ด';
+    $message_to_reply = 'ขอบคุณที่สอนบอทครับ';
   }
 }else{
   if($isData >0){
@@ -52,7 +52,7 @@ if (strpos($message, 'สอนเป็ด') !== false) {
      $message_to_reply = $rec->answer;
    }
   }else{
-    $message_to_reply = 'ก๊าบบ คุณสามารถสอนให้ฉลาดได้เพียงพิมพ์: สอนเป็ด[คำถาม|คำตอบ]';
+    $message_to_reply = 'ก๊าบบ คุณสามารถสอนให้ฉลาดได้เพียงพิมพ์: สอนบอท[คำถาม|คำตอบ]';
   }
 }
 //API Url
