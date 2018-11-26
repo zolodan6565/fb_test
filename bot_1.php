@@ -1,6 +1,6 @@
 <?php
-$access_token = "<ACCESS TOKEN>";
-$verify_token = "yellow_duck";
+$access_token = "EAAIHkTfskeYBANUpwd6tZCOay6tbAMZClyx7qxMCD18ecpNpK3y544l9Utk0MqZASbjZCkmCzyE8AZAQxDnrMrQbwbNJ0KxxEwZBPwds27BwwoIdbOwD8ZCRrP2SANkZAESJ8RRblOAuceY8LVQXA6ncDDiOOIhj9FJu5MtOzV8NgMSNO14zRwz2";
+$verify_token = "kindly_bot";
 $hub_verify_token = null;
 if(isset($_REQUEST['hub_challenge'])) {
  $challenge = $_REQUEST['hub_challenge'];
@@ -17,7 +17,7 @@ $message_to_reply = '';
  * Some Basic rules to validate incoming messages
  */
 
-$api_key="<mLAP API KEY>";
+$api_key="EAAIHkTfskeYBANUpwd6tZCOay6tbAMZClyx7qxMCD18ecpNpK3y544l9Utk0MqZASbjZCkmCzyE8AZAQxDnrMrQbwbNJ0KxxEwZBPwds27BwwoIdbOwD8ZCRrP2SANkZAESJ8RRblOAuceY8LVQXA6ncDDiOOIhj9FJu5MtOzV8NgMSNO14zRwz2";
 $url = 'https://api.mlab.com/api/1/databases/duckduck/collections/linebot?apiKey='.$api_key.'';
 $json = file_get_contents('https://api.mlab.com/api/1/databases/duckduck/collections/linebot?apiKey='.$api_key.'&q={"question":"'.$message.'"}');
 $data = json_decode($json);
