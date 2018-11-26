@@ -52,7 +52,7 @@ if (strpos($message, 'สอนบอท') !== false) {
      $message_to_reply = $rec->answer;
    }
   }else{
-    $message_to_reply = 'ก๊าบบ คุณสามารถสอนให้ฉลาดได้เพียงพิมพ์: สอนบอท[คำถาม|คำตอบ]';
+    $message_to_reply = 'ก๊าบบ บอทน้อยงงอ่ะ ยังไงรอสักครู่ให้ทางแอดมินมาตอบนะครับ';
   }
 }
 //API Url
