@@ -55,7 +55,6 @@ if (strpos($message, 'สอนบอท') !== false) {
    }
   }else{
     $message_to_reply = 'ก๊าบบ บอทน้อยงงอ่ะ ยังไงรอสักครู่ให้ทางแอดมินมาตอบนะครับ';
-	  break;
   }
 }
 //API Url
