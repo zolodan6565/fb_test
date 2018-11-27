@@ -16,6 +16,7 @@ $message_to_reply = '';
 /**
  * Some Basic rules to validate incoming messages
  */
+
 $api_key="8p2sCX3uUX68RTYXkc4udJKsG3CeIQhI";
 $url = 'https://api.mlab.com/api/1/databases/fb_bot_db/collections/fb_bot?apiKey='.$api_key.'';
 $json = file_get_contents('https://api.mlab.com/api/1/databases/fb_bot_db/collections/fb_bot?apiKey='.$api_key.'&q={"question":"'.$message.'"}');
@@ -59,40 +60,14 @@ $url = 'https://graph.facebook.com/v2.6/me/messages?access_token='.$access_token
 //Initiate cURL.
 $ch = curl_init($url);
 //The JSON data.
-
-
-
-/*$jsonData = '{
+$jsonData = '{
     "recipient":{
         "id":"'.$sender.'"
     },
     "message":{
         "text":"'.$message_to_reply.'"
     }
-}';*/
-$jsonData = '{
-    "recipient":{
-    "id":"'.$sender.'"
-  },
-  "message":{
-    "attachment":{
-      "type":"template",
-      "payload":{
-        "template_type":"button",
-        "text":"Try the log in button!",
-        "buttons":[
-          {
-            "type": "account_link",
-            "url": "https://www.example.com/authorize"
-          }
-        ]
-      }
-    }
-  }
 }';
-
-
-
 //Encode the array into JSON.
 $jsonDataEncoded = $jsonData;
 //Tell cURL that we want to send a POST request.
