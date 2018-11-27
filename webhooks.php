@@ -65,7 +65,7 @@ $jsonData = '{
         "id":"'.$sender.'"
     },
     "message":{
-        $message_to_reply
+        "text":"'.$message_to_reply.'"
     }
 }';
 //Encode the array into JSON.
