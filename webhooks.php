@@ -1,9 +1,5 @@
 <?php
 
-if ($bot_active == 'off' ){
-	sleep(20);
-	$bot_active = 'on';
-}
 
 $access_token = "EAAIHkTfskeYBACZChtGRV00yEzI7wFVbZCkgURUNGVemWAfcIixEQvEIJTfoM5w4Rroia0ETYXZAyKVGcdij7OZBCxJwXqgasmW5cZB5rdLmgwok1WNMJeTtWK9hzfaQvuAKRZBxuqDp2t7qoC8qREkkF3Ty9v0gnDwxBRkVDMZCJNdXhcZCbZB0u";
 $verify_token = "kindly_bot";
@@ -59,7 +55,6 @@ if (strpos($message, 'สอนบอท') !== false) {
    }
   }else{
     $message_to_reply = 'ก๊าบบ บอทน้อยงงอ่ะ ยังไงรอสักครู่ให้ทางแอดมินมาตอบนะครับ';
-	  $bot_active = 'off';
   }
 }
 //API Url
