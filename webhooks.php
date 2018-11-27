@@ -61,7 +61,7 @@ $url = 'https://graph.facebook.com/v2.6/me/messages?access_token='.$access_token
 $ch = curl_init($url);
 //The JSON data.
 
-/*if (strpos($message, 'เว็บบริษัท') !== false) {
+if (strpos($message, 'เว็บบริษัท') !== false) {
 	$jsonData = '{
 		 "recipient":{
 			"id":"'.$sender.'"
@@ -80,78 +80,6 @@ $ch = curl_init($url);
 				"webview_height_ratio": "full"
 			  }
 			]
-		  }
-		}
-	  }
-	}';
-}*/
-if (strpos($message, 'รายการสินค้า') !== false) {
-	$jsonData = '{
-		"recipient":{
-		"id":"'.$sender.'"
-	  }, 
-	  "message": {
-		"attachment": {
-		  "type": "template",
-		  "payload": {
-			"template_type": "list",
-			"top_element_style": "compact",
-			"elements": [
-			  {
-				"title": "Classic T-Shirt Collection",
-				"subtitle": "See all our colors",
-				"image_url": "https://media.fjallraven.com/fjr_list/7323450081638_FW18_a_nuuk_parka_w_fjaellraeven_21.jpg",          
-				"buttons": [
-				  {
-					"title": "View",
-					"type": "web_url",
-					"url": "https://peterssendreceiveapp.ngrok.io/collection",
-					"messenger_extensions": true,
-					"webview_height_ratio": "tall",
-					"fallback_url": "https://peterssendreceiveapp.ngrok.io/"            
-				  }
-				]
-			  },
-			  {
-				"title": "Classic White T-Shirt",
-				"subtitle": "See all our colors",
-				"default_action": {
-				  "type": "web_url",
-				  "url": "https://peterssendreceiveapp.ngrok.io/view?item=100",
-				  "messenger_extensions": false,
-				  "webview_height_ratio": "tall"
-				}
-			  },
-			  {
-				"title": "Classic Blue T-Shirt",
-				"image_url": "https://peterssendreceiveapp.ngrok.io/img/blue-t-shirt.png",
-				"subtitle": "100% Cotton, 200% Comfortable",
-				"default_action": {
-				  "type": "web_url",
-				  "url": "https://peterssendreceiveapp.ngrok.io/view?item=101",
-				  "messenger_extensions": true,
-				  "webview_height_ratio": "tall",
-				  "fallback_url": "https://peterssendreceiveapp.ngrok.io/"
-				},
-				"buttons": [
-				  {
-					"title": "Shop Now",
-					"type": "web_url",
-					"url": "https://peterssendreceiveapp.ngrok.io/shop?item=101",
-					"messenger_extensions": true,
-					"webview_height_ratio": "tall",
-					"fallback_url": "https://peterssendreceiveapp.ngrok.io/"            
-				  }
-				]        
-			  }
-			],
-			 "buttons": [
-			  {
-				"title": "View More",
-				"type": "postback",
-				"payload": "payload"            
-			  }
-			]  
 		  }
 		}
 	  }
