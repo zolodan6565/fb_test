@@ -76,8 +76,8 @@ if (strpos($message, 'เว็บบริษัท') !== false) {
 			  {
 				"type":"web_url",
 				"url":"https://www.google.com",
-				"title":"Google ครับ",
-				"webview_height_ratio": "tall"
+				"title":"ไปที่ลิ้ง",
+				"webview_height_ratio": "full"
 			  }
 			]
 		  }
