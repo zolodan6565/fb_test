@@ -100,7 +100,7 @@ if (strpos($message, 'รายการสินค้า') !== false) {
 			  {
 				"title": "Classic T-Shirt Collection",
 				"subtitle": "See all our colors",
-				"image_url": "https://peterssendreceiveapp.ngrok.io/img/collection.png",          
+				"image_url": "https://media.fjallraven.com/fjr_list/7323450081638_FW18_a_nuuk_parka_w_fjaellraeven_21.jpg",          
 				"buttons": [
 				  {
 					"title": "View",
