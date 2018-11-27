@@ -61,7 +61,7 @@ $url = 'https://graph.facebook.com/v2.6/me/messages?access_token='.$access_token
 $ch = curl_init($url);
 //The JSON data.
 
-if (strpos($message, 'ลิ้งบริษัท') !== false) {
+if (strpos($message, 'เว็บบริษัท') !== false) {
 	$jsonData = '{
 		 "recipient":{
 			"id":"'.$sender.'"
