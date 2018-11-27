@@ -18,7 +18,7 @@ $message_to_reply = '';
  * Some Basic rules to validate incoming messages
  */
 
-if ($message_to_reply === 'ก๊าบบ บอทน้อยงงอ่ะ ยังไงรอสักครู่ให้ทางแอดมินมาตอบนะครับ'){
+if ($message_to_reply == 'ก๊าบบ บอทน้อยงงอ่ะ ยังไงรอสักครู่ให้ทางแอดมินมาตอบนะครับ'){
 	sleep(15);	
 }
 
