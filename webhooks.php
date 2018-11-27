@@ -1,5 +1,4 @@
 <?php
-$bot_active = '';
 if ($bot_active == 'on' ){
 $access_token = "EAAIHkTfskeYBACZChtGRV00yEzI7wFVbZCkgURUNGVemWAfcIixEQvEIJTfoM5w4Rroia0ETYXZAyKVGcdij7OZBCxJwXqgasmW5cZB5rdLmgwok1WNMJeTtWK9hzfaQvuAKRZBxuqDp2t7qoC8qREkkF3Ty9v0gnDwxBRkVDMZCJNdXhcZCbZB0u";
 $verify_token = "kindly_bot";
@@ -114,5 +113,10 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
 if(!empty($input['entry'][0]['messaging'][0]['message'])){
     $result = curl_exec($ch);
 }
+}
+
+if ($bot_active == 'off' ){
+	sleep(20);
+	$bot_active = 'on';
 }
 ?>
