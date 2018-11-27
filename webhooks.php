@@ -18,6 +18,11 @@ $message_to_reply = '';
  * Some Basic rules to validate incoming messages
  */
 
+if ($message_to_reply === 'ก๊าบบ บอทน้อยงงอ่ะ ยังไงรอสักครู่ให้ทางแอดมินมาตอบนะครับ'){
+	sleep(15);	
+}
+
+
 $api_key="8p2sCX3uUX68RTYXkc4udJKsG3CeIQhI";
 $url = 'https://api.mlab.com/api/1/databases/fb_bot_db/collections/fb_bot?apiKey='.$api_key.'';
 $json = file_get_contents('https://api.mlab.com/api/1/databases/fb_bot_db/collections/fb_bot?apiKey='.$api_key.'&q={"question":"'.$message.'"}');
