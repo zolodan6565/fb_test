@@ -56,18 +56,12 @@ else if (strpos($message, 'ลบบอท') !== false) {
     $_question=str_replace("[","",$pieces[0]);
     $_answer=str_replace("]","",$pieces[1]);
     //Post New Data
-    $delData = json_encode(
-      array(
-        'question' => $_question
-      )
-    );
-    $opts = array(
-      'http' => array(
-          'method' => "DELETE"
-          /*'header' => "Content-type: application/json",
-          'content' => $delData*/
-       )
-    );
+    foreach ($data as $key => $value) {
+	    if (in_array("$_question", $value)) {
+		unset($data[$key]);
+	    }
+	}
+	$opts = json_encode($data);
     $context = stream_context_create($opts);
     $returnValue = file_get_contents($url,false,$context);
     $message_to_reply = 'ลบแล้วครับ';
