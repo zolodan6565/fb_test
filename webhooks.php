@@ -50,9 +50,8 @@ if (strpos($message, 'สอนบอท') !== false) {
 //  }
 }
 else if (strpos($message, 'ลบบอท') !== false) {
- // if (strpos($message, 'สอนบอท') !== false) {
     $x_tra = str_replace("ลบบอท","", $message);
-    //$pieces = explode("|", $x_tra);
+    $pieces = explode("|", $x_tra);
     $_question=str_replace("[","",$pieces[0]);
     $_answer=str_replace("]","",$pieces[1]);
     //Post New Data
@@ -65,7 +64,6 @@ else if (strpos($message, 'ลบบอท') !== false) {
     $context = stream_context_create($opts);
     $returnValue = file_get_contents($url,false,$context);
     $message_to_reply = 'ลบแล้วครับ';
-//  }
 }
 
 
