@@ -50,17 +50,18 @@ if (strpos($message, 'สอนบอท') !== false) {
 //  }
 }
 else if (strpos($message, 'ลบบอท') !== false) {
-    $x_tra = str_replace("ลบบอท","", $message);
+    $x_tra = str_replace("สอนบอท","", $message);
     $pieces = explode("|", $x_tra);
     $_question=str_replace("[","",$pieces[0]);
     $_answer=str_replace("]","",$pieces[1]);
     //Post New Data
-    foreach ($data as $key => $value) {
-	    if (in_array("$_question", $value)) {
-		unset($data[$key]);
-	    }
-	}
-	$opts = json_encode($data);
+    $opts = array(
+      'http' => array(
+          'method' => "DELETE",
+          'header' => "Content-type: application/json",
+          'content' => $_question
+       )
+    );
     $context = stream_context_create($opts);
     $returnValue = file_get_contents($url,false,$context);
     $message_to_reply = 'ลบแล้วครับ';
