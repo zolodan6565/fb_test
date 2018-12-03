@@ -48,7 +48,35 @@ if (strpos($message, 'สอนบอท') !== false) {
     $returnValue = file_get_contents($url,false,$context);
     $message_to_reply = 'ขอบคุณที่สอนบอทครับ';
 //  }
-}else{
+}
+else if (strpos($message, 'ลบบอท') !== false) {
+ // if (strpos($message, 'สอนบอท') !== false) {
+    $x_tra = str_replace("ลบบอท","", $message);
+    $pieces = explode("|", $x_tra);
+    $_question=str_replace("[","",$pieces[0]);
+    $_answer=str_replace("]","",$pieces[1]);
+    //Post New Data
+    $newData = json_encode(
+      array(
+        'question' => $_question,
+        'answer'=> $_answer
+      )
+    );
+    $opts = array(
+      'http' => array(
+          'method' => "DELETE",
+          'header' => "Content-type: application/json",
+          'content' => $newData
+       )
+    );
+    $context = stream_context_create($opts);
+    $returnValue = file_get_contents($url,false,$context);
+    $message_to_reply = 'ลบแล้วครับ';
+//  }
+}
+
+
+else{
   if($isData >0){
    foreach($data as $rec){
      $message_to_reply = $rec->answer;
