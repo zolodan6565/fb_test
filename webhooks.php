@@ -55,11 +55,17 @@ else if (strpos($message, 'ลบบอท') !== false) {
     $_question=str_replace("[","",$pieces[0]);
     $_answer=str_replace("]","",$pieces[1]);
     //Post New Data
+	$delData = json_encode(
+      array(
+        'question' => $_question,
+        'answer'=> $_answer
+      )
+    );
     $opts = array(
       'http' => array(
           'method' => "DELETE",
           'header' => "Content-type: application/json",
-          'content' => $_question
+          'content' => $delData
        )
     );
     $context = stream_context_create($opts);
