@@ -52,21 +52,20 @@ if (strpos($message, 'สอนบอท') !== false) {
 else if (strpos($message, 'ลบบอท') !== false) {
  // if (strpos($message, 'สอนบอท') !== false) {
     $x_tra = str_replace("ลบบอท","", $message);
-    $pieces = explode("|", $x_tra);
+    //$pieces = explode("|", $x_tra);
     $_question=str_replace("[","",$pieces[0]);
     $_answer=str_replace("]","",$pieces[1]);
     //Post New Data
-    $newData = json_encode(
+    $delData = json_encode(
       array(
-        'question' => $_question,
-        'answer'=> $_answer
+        'question' => $_question
       )
     );
     $opts = array(
       'http' => array(
           'method' => "DELETE",
           'header' => "Content-type: application/json",
-          'content' => $newData
+          'content' => $delData
        )
     );
     $context = stream_context_create($opts);
