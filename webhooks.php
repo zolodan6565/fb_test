@@ -63,9 +63,9 @@ else if (strpos($message, 'ลบบอท') !== false) {
     );
     $opts = array(
       'http' => array(
-          'method' => "DELETE",
-          'header' => "Content-type: application/json",
-          'content' => $delData
+          'method' => "DELETE"
+          /*'header' => "Content-type: application/json",
+          'content' => $delData*/
        )
     );
     $context = stream_context_create($opts);
