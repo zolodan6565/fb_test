@@ -100,11 +100,18 @@ else if (strpos($message, 'ขอรูป') !== false) {
 			  "payload":{
 				"is_reusable": true,
 				"url":"https://i.ytimg.com/vi/ErHo9uWC5_M/hqdefault.jpg"
+			  }
+			},
+			"attachment":{
+			  "type":"template",
+			  "payload":{
+				"template_type":"button",
+				"text":"'.$message_to_reply.'",
 				"buttons":[
 				  {
 					"type":"web_url",
 					"url":"https://www.google.com",
-					"title":"กดสั่งซื้อ",
+					"title":"สั่งซื้อ",
 					"webview_height_ratio": "full"
 				  }
 				]
