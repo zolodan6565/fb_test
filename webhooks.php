@@ -95,19 +95,13 @@ else if (strpos($message, 'ขอรูป') !== false) {
 			"id":"'.$sender.'"
 		},
 		"message":{
-		    "attachment": {
-		      "type": "template",
-		      "payload": {
-			 "template_type": "media",
-			 "text":"'.$message_to_reply.'",
-			 "elements": [
-			    {
-			       "media_type": "image",
-			       "url": "https://i.ytimg.com/vi/ErHo9uWC5_M/hqdefault.jpg",
-			    }
-			 ]
-		      }
-		    }    
+			"attachment":{
+			  "type":"image", 
+			  "payload":{
+				"is_reusable": true,
+				"url":"https://i.ytimg.com/vi/ErHo9uWC5_M/hqdefault.jpg"
+			  }
+			}
 		  }
 	}';
 }
