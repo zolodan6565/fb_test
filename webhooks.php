@@ -50,38 +50,6 @@ if (strpos($message, 'สอนบอท') !== false) {
 //  }
 }
 
-
-else if (strpos($message, 'ลบบอท') !== false) {
-    $x_tra = str_replace("ลบบอท","", $message);
-    $pieces = explode("|", $x_tra);
-    $_question=str_replace("[","",$pieces[0]);
-    $_answer=str_replace("]","",$pieces[1]);
-	
-    $arr_index = array();
-	foreach ($data as $key => $value)
-{
-    if ($value['question'] == "$_question")
-    {
-        $arr_index[] = $key;
-    }
-}
-	foreach ($arr_index as $i)
-{
-    unset($data[$i]);
-}
-	$data = array_values($data);
-	
-  $returnValue = file_put_contents($url, json_encode($data));
-   // $returnValue = file_get_contents($url,false,$context);
-    $message_to_reply = 'ลบแล้วครับ';
-}
-	
-	
-	
-	
-	
-	
-
 else{
   if($isData >0){
    foreach($data as $rec){
