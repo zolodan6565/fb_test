@@ -89,6 +89,24 @@ if (strpos($message, 'เว็บบริษัท') !== false) {
 	  }
 	}';
 }
+else if (strpos($message, 'ขอรูป') !== false) {
+	$jsonData = '{
+		 "recipient":{
+			"id":"'.$sender.'"
+		},
+		"message":{
+		"attachment":{
+		  "type":"image",
+		  "payload":{
+		  	"text":"'.$message_to_reply.'",
+			"url":"https://i.ytimg.com/vi/ErHo9uWC5_M/hqdefault.jpg",
+			"is_reusable":true,
+			
+		  }
+		}
+	  }
+	}';
+}
 else{
 	$jsonData = '{
 		"recipient":{
