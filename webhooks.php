@@ -103,7 +103,7 @@ else if (strpos($message, 'ขอรูป') !== false) {
 			 "elements": [
 			    {
 			       "media_type": "image",
-			       "url": "https://i.ytimg.com/vi/ErHo9uWC5_M/hqdefault.jpg"
+			       "url": "https://i.ytimg.com/vi/ErHo9uWC5_M/hqdefault.jpg",
 			    }
 			 ]
 		      }
