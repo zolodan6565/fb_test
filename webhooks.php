@@ -99,7 +99,7 @@ else if (strpos($message, 'ขอรูป') !== false) {
 			  "type":"image", 
 			  "payload":{
 				"is_reusable": true,
-				"url":"https://i.ytimg.com/vi/ErHo9uWC5_M/hqdefault.jpg",
+				"url":"https://i.ytimg.com/vi/ErHo9uWC5_M/hqdefault.jpg"
 				"buttons":[
 				  {
 					"type":"web_url",
