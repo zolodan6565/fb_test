@@ -49,25 +49,38 @@ if (strpos($message, 'สอนบอท') !== false) {
     $message_to_reply = 'ขอบคุณที่สอนบอทครับ';
 //  }
 }
+
+
 else if (strpos($message, 'ลบบอท') !== false) {
-    $x_tra = str_replace("สอนบอท","", $message);
+    $x_tra = str_replace("ลบบอท","", $message);
     $pieces = explode("|", $x_tra);
     $_question=str_replace("[","",$pieces[0]);
     $_answer=str_replace("]","",$pieces[1]);
-    //Post New Data
 	
-	foreach ($data as $key => $value) {
-    if (in_array("$_question", $value)) {
-        unset($data[$key]);
+    $arr_index = array();
+	foreach ($data as $key => $value)
+{
+    if ($value['question'] == "$_question")
+    {
+        $arr_index[] = $key;
     }
 }
-$delData = json_encode($data);
-   
-    $context = stream_context_create($delData);
-    $returnValue = file_get_contents($url,false,$context);
+	foreach ($arr_index as $i)
+{
+    unset($data[$i]);
+}
+	$data = array_values($data);
+	
+  $returnValue = file_put_contents($url, json_encode($data));
+   // $returnValue = file_get_contents($url,false,$context);
     $message_to_reply = 'ลบแล้วครับ';
 }
-
+	
+	
+	
+	
+	
+	
 
 else{
   if($isData >0){
